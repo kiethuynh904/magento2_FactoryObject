@@ -1,0 +1,25 @@
+{
+  "name": "rina/region",
+  "description": "Rina Region",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": [
+
+  ],
+  "extra": {
+    "magento-root-dir": "vendor",
+    "magento-deploystrategy": "copy"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Rina\\Region\\": ""
+    }
+  }
+}
