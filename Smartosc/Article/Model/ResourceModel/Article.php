@@ -4,7 +4,7 @@ namespace Smartosc\Article\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\Context;
 
-class SmArticle extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
+class Article extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     public function __construct(Context $context)
     {

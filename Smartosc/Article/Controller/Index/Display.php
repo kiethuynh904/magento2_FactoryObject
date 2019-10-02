@@ -1,29 +1,23 @@
 <?php
+
 namespace Smartosc\Article\Controller\Index;
 
+use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
 
-/**
- * Class Display
- * @package Smartosc\Article\Controller\Index
- */
-class Display extends \Magento\Framework\App\Action\Action
+class Display extends Action
 {
-    /**
-     * Display constructor.
-     *
-     * @param \Magento\Framework\App\Action\Context $context
-     */
-    public function __construct(Context $context)
+    protected $_pageFactory;
+
+    public function __construct(Context $context, PageFactory $pageFactory)
     {
-        parent::__construct($context);
+        $this->_pageFactory = $pageFactory;
+        return parent::__construct($context);
     }
 
     public function execute()
     {
-        //Find to way get the config: smartosc_configuration/configuration/enable
-        echo 'Hello Article';
-        exit;
+        return $this->_pageFactory->create();
     }
-
 }
