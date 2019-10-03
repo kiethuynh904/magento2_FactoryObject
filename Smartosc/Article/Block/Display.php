@@ -14,7 +14,7 @@ class Display extends Template
 
     public function __construct(Context $context,PageFactory $pageFactory,CollectionFactory $articleCollectionFactory)
     {
-        $this->_pageFactory = $pageFactory;
+//        $this->_pageFactory = $pageFactory;
         $this->_articleCollectionFactory = $articleCollectionFactory;
         parent::__construct($context);
     }

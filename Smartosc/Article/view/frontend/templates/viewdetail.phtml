@@ -1,11 +1,14 @@
 <?php
 
+use Smartosc\Article\Block\ArticleDetail;
 /**
- * @var \Smartosc\Article\Block\Display $block
+ * @var ArticleDetail $block
  */
-//var_dump($block->getArticle());
+
+//$article = $block->getDetail();
 
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,27 +25,27 @@
 <table class="table">
     <thead>
     <tr>
-        <th>Article ID</th>
+        <th>ID</th>
         <th>Title</th>
         <th>Content</th>
+        <th>Image</th>
+        <th>Created_At</th>
+        <th>Updated_At</th>
     </tr>
     </thead>
     <tbody>
-    <?php
-    foreach ($block->getArticle() as $key => $article) {
-        var_dump($key);
-        //die();
-        echo '
-        <tr>
-        <td>'.$article["article_id"].'</td>
-        <td><a href="/article/index/detail?id='.$article["article_id"].'">'.$article["title"].'</a></td>
-        <td>'.$article["content"].'</td>
-        </tr>
-        ';
-    }
-    ?>
+    <tr>
+        <?php $article = $block->getDetail();
+        print_r($article);
+        ?>
+        <td><?php echo $article[0]["article_id"]?></td>
+        <td></td>
+        <td></td>
+    </tr>
     </tbody>
 </table>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -54,9 +57,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
