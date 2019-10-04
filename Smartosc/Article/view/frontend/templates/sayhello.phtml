@@ -3,8 +3,7 @@
 /**
  * @var \Smartosc\Article\Block\Display $block
  */
-//var_dump($block->getArticle());
-
+$listArticle = $block->getArticle()->getData();
 ?>
 <!doctype html>
 <html lang="en">
@@ -28,21 +27,30 @@
     </tr>
     </thead>
     <tbody>
+
     <?php
-    foreach ($block->getArticle() as $key => $article) {
+    foreach ($listArticle as $key => $article) {
         var_dump($key);
         //die();
         echo '
         <tr>
-        <td>'.$article["article_id"].'</td>
-        <td><a href="/article/index/detail?id='.$article["article_id"].'">'.$article["title"].'</a></td>
-        <td>'.$article["content"].'</td>
+        <td>' . $article["article_id"] . '</td>
+        <td><a href="/article/index/detail?id=' . $article["article_id"] . '">' . $article["title"] . '</a></td>
+        <td>' . $article["content"] . '</td>
         </tr>
         ';
     }
     ?>
     </tbody>
+
+
 </table>
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom">
+        <?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

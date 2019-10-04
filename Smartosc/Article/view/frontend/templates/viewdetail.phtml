@@ -6,7 +6,8 @@ use Smartosc\Article\Block\ArticleDetail;
  */
 
 //$article = $block->getDetail();
-
+$article = $block->getDetail()[0];
+print_r($article);
 ?>
 
 <!doctype html>
@@ -35,12 +36,13 @@ use Smartosc\Article\Block\ArticleDetail;
     </thead>
     <tbody>
     <tr>
-        <?php $article = $block->getDetail();
-        print_r($article);
-        ?>
-        <td><?php echo $article[0]["article_id"]?></td>
-        <td></td>
-        <td></td>
+
+        <td><?php echo $article["article_id"]?></td>
+        <td><?php echo $article["title"]?></td>
+        <td><?php echo $article["content"]?></td>
+        <td><?php echo $article["image"]?></td>
+        <td><?php echo $article["created_at"]?></td>
+        <td><?php echo $article["updated_at"]?></td>
     </tr>
     </tbody>
 </table>

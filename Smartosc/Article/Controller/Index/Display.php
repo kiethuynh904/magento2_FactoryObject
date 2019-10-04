@@ -18,6 +18,8 @@ class Display extends Action
 
     public function execute()
     {
-        return $this->_pageFactory->create();
+        $resultPage = $this->_pageFactory->create();
+        return $resultPage;
     }
+
 }
